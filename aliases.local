@@ -1,0 +1,35 @@
+#Git aliases in alphabetical order
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbda='git branch --merged | command grep -vE "^(\*|\s*master\s*$)" | command xargs -n 1 git branch -d'
+alias gbnm='git branch --no-merged'
+alias gbr='git branch --remote'
+
+alias gc='git commit -v'
+alias gc!='git commit -v --amend'
+alias gca='git commit -v -a'
+alias gca!='git commit -v -a --amend'
+alias gcb='git checkout -b'
+alias gclean='git clean -fd'
+alias gpristine='git reset --hard && git clean -dfx'
+alias gcm='git checkout master'
+alias gco='git checkout'
+alias gcp='git cherry-pick'
+
+alias gd='git diff'
+
+alias gf='git fetch'
+alias gfo='git fetch origin'
+
+alias ggpush='git push origin $(current_branch)'
+
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbi='git rebase -i'
+
+alias gst='git status'
+alias gsta='git stash'
+alias gstp='git stash pop'
