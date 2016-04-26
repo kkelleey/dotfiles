@@ -48,6 +48,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " split edit vimrc
-nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>vr :vsp $MYVIMRC.local<cr>
 " source vimrc
 nmap <leader>so :so $MYVIMRC<cr>
