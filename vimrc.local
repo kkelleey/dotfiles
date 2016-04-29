@@ -1,4 +1,5 @@
 set relativenumber
+set number
 let g:tmux_navigator_no_mappings = 1
 
 " Use VimTmuxRunner to run specs
@@ -49,3 +50,6 @@ let g:syntastic_elixir_checkers = ['elixir']
 nmap <leader>vr :vsp $MYVIMRC.local<cr>
 " source vimrc
 nmap <leader>so :so $MYVIMRC<cr>
+
+" Replace with clipboard
+nmap <leader>gr "*gr
