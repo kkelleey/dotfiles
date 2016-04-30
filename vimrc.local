@@ -53,3 +53,6 @@ nmap <leader>so :so $MYVIMRC<cr>
 
 " Replace with clipboard
 nmap <leader>gr "*gr
+
+map <Leader>ra :%s/
+map <leader>r" :s/"/'/g<cr>
