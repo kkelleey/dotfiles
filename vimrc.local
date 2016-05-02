@@ -56,5 +56,4 @@ nmap <leader>gr "*gr
 
 map <Leader>ra :%s/
 map <leader>r" :s/"/'/g<cr>
-map <leader>sp :set paste<cr>
-map <leader>snp :set nopaste<cr>
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
