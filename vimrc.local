@@ -58,3 +58,4 @@ nmap <leader>so :so $MYVIMRC<cr>
 nmap <leader>gr "*gr
 
 vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR><esc>dd"tP`[=`]
+vmap <Leader>bec "td?context<CR>obefore(:each) do<CR><esc>ma/end<CR>o<esc>'add"tP`[=`]
