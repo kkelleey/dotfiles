@@ -25,6 +25,7 @@ alias gf='git fetch'
 alias gfo='git fetch origin'
 
 alias ggpush='git push origin $(current_branch)'
+alias glum='git pull upstream master'
 
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
@@ -33,3 +34,5 @@ alias grbi='git rebase -i'
 alias gst='git status'
 alias gsta='git stash'
 alias gstp='git stash pop'
+
+alias vim='/usr/local/bin/vim'
