@@ -52,10 +52,11 @@ map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>ra :%s/
 map <leader>r" :s/"/'/g<cr>
 
+nmap <leader>evr :e $MYVIMRC.local<cr>
 nmap <leader>vr :vsp $MYVIMRC.local<cr>
 nmap <leader>so :so $MYVIMRC<cr>
 " Replace with clipboard
 nmap <leader>gr "*gr
 
-vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR><esc>dd"tP`[=`]
-vmap <Leader>bec "td?context<CR>obefore(:each) do<CR><esc>ma/end<CR>o<esc>'add"tP`[=`]
+vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR><esc>ma/end<CR>o<esc>'a"tgrr`[=`]
+vmap <Leader>bec "td?context<CR>obefore(:each) do<CR><esc>ma/end<CR>o<esc>'a"tgrr`[=`]
