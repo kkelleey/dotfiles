@@ -53,6 +53,7 @@ map <Leader>ra :%s/
 map <leader>r" :s/"/'/g<cr>
 
 nmap <leader>evr :e $MYVIMRC.local<cr>
+nmap <leader>fs xea:<esc>/=><CR>daw
 nmap <leader>vr :vsp $MYVIMRC.local<cr>
 nmap <leader>so :so $MYVIMRC<cr>
 " Replace with clipboard
