@@ -1,3 +1,5 @@
+alias be='bundle exec'
+
 #Git aliases in alphabetical order
 alias ga='git add'
 alias gaa='git add --all'
@@ -30,6 +32,9 @@ alias glum='git pull upstream master'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase -i'
+
+alias grhh='git reset HEAD~1'
+alias grh='git reset HEAD'
 
 alias gst='git status'
 alias gsta='git stash'
