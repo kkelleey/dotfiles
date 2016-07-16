@@ -2,8 +2,7 @@ set relativenumber
 set number
 let g:tmux_navigator_no_mappings = 1
 
-" Use VimTmuxRunner to run specs
-let g:rspec_command = "call VtrSendCommand('rspec {spec}')"
+let test#strategy = "dispatch"
 
 " Seamless navigation
 "http://www.codeography.com/2013/06/19/navigating-vim-and-tmux-splits
