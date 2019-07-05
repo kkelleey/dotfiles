@@ -2,7 +2,9 @@ set relativenumber
 set number
 let g:tmux_navigator_no_mappings = 1
 
-let test#strategy = "dispatch"
+let test#strategy = "vtr"
+let test#ruby#bundle_exec = 0
+let test#ruby#rspec#executable = "bb spec"
 
 " Seamless navigation
 "http://www.codeography.com/2013/06/19/navigating-vim-and-tmux-splits
@@ -35,6 +37,7 @@ endif
 if &diff
   colorscheme evening
 endif
+colorscheme ron
 
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
@@ -47,15 +50,19 @@ let g:ctrlp_use_caching = 0
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_ruby_checker = 1
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_elixir_checkers = ['elixir']
 
+inoremap jj <Esc>
+nnoremap <Leader>vtr :VtrAttachToPane<CR>
 
 map <Leader>il `[=`]
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>ra :%s/
 map <leader>r" :s/"/'/g<cr>
+map <leader>r' :s/'/"/g<cr>
 
 nmap <leader>evr :e $MYVIMRC.local<cr>
 nmap <leader>fs xea:<esc>/=><CR>daw
@@ -63,8 +70,16 @@ nmap <leader>vr :vsp $MYVIMRC.local<cr>
 nmap <leader>so :so $MYVIMRC<cr>
 " Replace with clipboard
 nmap <leader>gr "*gr
+" fix hash rockets
+nmap <leader>fhr :%s/:\([^=,'"]*\) =>/\1:/g<cr>
+" remove trailing whitespace
+nmap <leader>ftw :%s/\s\+$//e<cr>
+" Change let block to variable =
+nmap <leader>ltv dt:xf)2ct  =f}hD
+" Remove parentheses
+nmap <leader>pts cs( j ftw
 
 vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR><esc>ma/end<CR>o<esc>'a"tgrr`[=`]
 vmap <Leader>bec "td?context<CR>obefore(:each) do<CR><esc>ma/end<CR>o<esc>'a"tgrr`[=`]
-" Replace one line do end block with { } block
+" Convert do end block to one line block
 vmap <Leader>olb c{<esc>JJ/end<CR>ciw}<esc>
