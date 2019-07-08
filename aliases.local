@@ -26,8 +26,13 @@ alias gd='git diff'
 alias gf='git fetch'
 alias gfo='git fetch origin'
 
+alias glast='git log -1'
+
+alias gmn='git merge --no-commit -'
+
 alias ggpush='git push origin $(current_branch)'
 alias glum='git pull upstream master'
+alias gpr='git pull --rebase'
 
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
@@ -39,3 +44,4 @@ alias grh='git reset HEAD'
 alias gst='git status'
 alias gsta='git stash'
 alias gstp='git stash pop'
+alias gstu='git stash save -u'
