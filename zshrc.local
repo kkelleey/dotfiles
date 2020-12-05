@@ -12,3 +12,32 @@ function current_branch() {
   fi
   echo ${ref#refs/heads/}
 }
+
+todo() {
+  todo_file=~/.todo_file.txt
+  if test ! -f "$todo_file"
+  then
+    touch "$todo_file"
+  fi
+
+  case "$1" in
+    "list")
+      cat "$todo_file"
+      ;;
+    "add")
+      echo "$2" >> "$todo_file"
+      ;;
+    "complete")
+      to_write=$(grep -v "$2" "$todo_file")
+      echo "$to_write" > "$todo_file"
+      ;;
+    *)
+      ;;
+  esac
+}
+
+# work aliases
+[[ -f ~/.zshrc.work ]] && source ~/.zshrc.work
+
+# Local work config
+[[ -f ~/.aliases.work ]] && source ~/.aliases.work
