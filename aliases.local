@@ -17,7 +17,6 @@ alias gca!='git commit -v -a --amend'
 alias gcb='git checkout -b'
 alias gclean='git clean -fd'
 alias gpristine='git reset --hard && git clean -dfx'
-alias gcm='git checkout master'
 alias gco='git checkout'
 alias gcp='git cherry-pick'
 
@@ -45,3 +44,7 @@ alias gst='git status'
 alias gsta='git stash'
 alias gstp='git stash pop'
 alias gstu='git stash save -u'
+
+alias gwip='git add -A && git commit -m "WIP"'
+
+alias killrails='kill -9 $(lsof -i tcp:3000 -t)'

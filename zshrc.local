@@ -31,6 +31,9 @@ todo() {
       to_write=$(grep -v "$2" "$todo_file")
       echo "$to_write" > "$todo_file"
       ;;
+     "edit")
+       vim "$todo_file"
+       ;;
     *)
       ;;
   esac
@@ -41,3 +44,7 @@ todo() {
 
 # Local work config
 [[ -f ~/.aliases.work ]] && source ~/.aliases.work
+
+# if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
+
+export AWS_EC2_METADATA_DISABLED=true

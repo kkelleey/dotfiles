@@ -1,6 +1,5 @@
 set relativenumber
 set number
-let g:tmux_navigator_no_mappings = 1
 
 let test#strategy = "vtr"
 let test#ruby#bundle_exec = 0
@@ -38,12 +37,16 @@ if &diff
   colorscheme evening
 endif
 colorscheme ron
+colorscheme gruvbox
 
 
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+" ALE linter
+let g:ale_virtualtext_cursor = 'disabled'
+let g:ale_sign_error = '>>'
 
 " Syntastic recommended configs
 " https://github.com/scrooloose/syntastic
@@ -57,6 +60,7 @@ let g:syntastic_elixir_checkers = ['elixir']
 
 inoremap jj <Esc>
 nnoremap <Leader>vtr :VtrAttachToPane<CR>
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 map <Leader>il `[=`]
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
