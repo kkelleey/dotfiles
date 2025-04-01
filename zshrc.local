@@ -39,6 +39,26 @@ todo() {
   esac
 }
 
+scp_to_devdsk() {
+  scp $1 karenkel@$DEVDSK:/tmp
+}
+
+scp_from_devdsk() {
+  scp karenkel@$DEVDSK:/tmp/$1 .
+}
+
+bayesian_priors() {
+  scp_from_devdsk $1\_input.csv
+  echo "Copying $1\_input.csv from devdsk"
+  python3 update_historic_weblab_results.py --prior_estimates_file_new estimated_priors_all.csv --prior_estimates_file_old current_priors_all.csv --weblab_file $1\_input.csv --target_file $1\_output.csv
+  echo "Saved new priors to $1\_output.csv"
+  ./csv_converter.rb $1\_output.csv
+}
+
+bayesian_priors_old() {
+  python3 update_historic_weblab_results.py --prior_estimates_file estimated_priors_all.csv --weblab_file $1\_input.csv --target_file $1\_output.csv
+}
+
 # work aliases
 [[ -f ~/.zshrc.work ]] && source ~/.zshrc.work
 

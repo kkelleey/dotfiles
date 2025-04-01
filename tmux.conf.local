@@ -48,5 +48,5 @@ bind-key C-j choose-tree
 setw -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim
-# bind-key -T copy-mode-vi v begin-selection
-# bind-key -T copy-mode-vi y copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -t copy-mode-vi v begin-selection
+bind-key -t copy-mode-vi y copy-pipe "reattach-to-user-namespace pbcopy"

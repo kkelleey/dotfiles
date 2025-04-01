@@ -5,6 +5,12 @@ let test#strategy = "vtr"
 let test#ruby#bundle_exec = 0
 let test#ruby#rspec#executable = "bb spec"
 
+" React stuff
+set re=2
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
+
 " Seamless navigation
 "http://www.codeography.com/2013/06/19/navigating-vim-and-tmux-splits
 if exists('$TMUX')

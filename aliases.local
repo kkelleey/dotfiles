@@ -44,7 +44,7 @@ alias gst='git status'
 alias gsta='git stash'
 alias gstp='git stash pop'
 alias gstu='git stash save -u'
-
 alias gwip='git add -A && git commit -m "WIP"'
-
 alias killrails='kill -9 $(lsof -i tcp:3000 -t)'
+alias gmerged='gb --merged | egrep -v mainline'
+alias gdmerged='gb --merged | egrep -v mainline | xargs git branch -D'
